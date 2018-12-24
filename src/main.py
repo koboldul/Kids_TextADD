@@ -12,53 +12,55 @@ hp_idx = 3
 
 player = [0] * 4   
 
-# def collect_info(feature_list, feature, feature_idx):
-#     global player
+def collect_info(feature_list, feature, feature_idx):
+    global player
 
-#     print('(choose a ' + feature + ' )')
+    print('(choose a ' + feature + ' )')
 
-#     for i in range(0, len(feature_list)):
-#         print (str(i+1) + '. ' + feature_list[i])
+    for i in range(0, len(feature_list)):
+        print (str(i+1) + '. ' + feature_list[i])
 
-#     player[feature_idx] = int(input()) - 1
+    player[feature_idx] = int(input()) - 1
 
-# print('Hello hero! You are in a sordid tavern when a stranger walk up to you and asks:')
-# print('My name is armir and Im a great warrior but Im in need of help my job to you is ')
+def print_stats(stats, class_list, race_list, weapon_list):
+    print('Class: ' + class_list[stats[class_idx]] + ' Race: ' + race_list[stats[race_idx]] + ' Weapon: ' + weapon_list[stats[weapon_idx]] + ' HP: ' +  str(stats[hp_idx]))
 
-# collect_info(classes, 'class', class_idx)
-# print ('I rarely see a')
 
-# collect_info(races, 'race_idx', race_idx)
-# print ('around this parts.')
+print('Hello hero! You are in a sordid tavern when a stranger walk up to you and asks:')
+print('My name is armir and Im a great warrior but Im in need of help my job to you is ')
 
-# collect_info(weapons, 'weapon_idx', weapon_idx)
-# print('you have there')
+collect_info(classes, 'class', class_idx)
+print ('I rarely see a')
 
-# hit_pnt = randint(20, 100)
-# player[hp_idx] = hit_pnt
+collect_info(races, 'race_idx', race_idx)
+print ('around this parts.')
 
-# print('Class: ' + classes[player[class_idx]] + ' Race: ' + races[player[race_idx]] + ' Weapon: ' + weapons[player[weapon_idx]] + ' HP: ' +  str(player[hp_idx]))
+collect_info(weapons, 'weapon_idx', weapon_idx)
+print('you have there')
+
+hit_pnt = randint(20, 100)
+player[hp_idx] = hit_pnt
+
+print_stats(player, classes, races, weapons)
 
 mob_races_lvl_1 = ['goblin', 'orc', 'giant rat']
 mob_weapons_lvl_1 = ['dagger', 'rusty sword']
 mob_classes_lvl_1 = ['fighter', 'warlock', 'ranger']
 
-mob_class_idx = 0
-mob_race_idx = 1
-mob_weapon_idx = 2
-mob_hp_idx = 3
+widx = randint(0, len(mob_weapons_lvl_1)-1)
+cidx = randint(0, len(mob_classes_lvl_1)-1)
+ridx = randint(0, len(mob_races_lvl_1)-1)
 
-mob_weapon_idx = randint(1, len(mob_weapon_lvl_1)
-
-mob_class_idx = randint(0, len(mob_classes_lvl_1))
-
-mob_race_idx = randint(0, len(mob_races_lvl_1))
+mob = [0] * 4 
 
 mob_hp = randint(1, 7)
-mob[mob_hp_idx] = 
+mob[hp_idx] = mob_hp
+mob[class_idx]=cidx
+mob[race_idx]=ridx
+mob[weapon_idx]=widx
+print ('idx c ' + str(cidx) + ' w: ' + str(widx) +  '  r ' + str(ridx))
 
-print('mob race: ' +  mob_races_lvl_1[mob_race]  +' mob weapon: ' + mob_weapon + ' mob class: ' + classes[mob_class] + ' mob hp ' + str(mob_hp ))
-
+print_stats(mob, mob_classes_lvl_1, mob_races_lvl_1, mob_weapons_lvl_1)
 
 
 
